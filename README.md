@@ -1,5 +1,5 @@
 BOOST.Test finder script
-========================
+------------------------
 
 This script automatically find for you cpp files containing boost unit test and
 generate a makefile with the following target:
@@ -9,7 +9,7 @@ generate a makefile with the following target:
  * `clean:` remove all files generated.
 
 Requirements
-============
+------------
 
 To run the script, you just need to have python to be installed in you environment.
 If you're on linux, just make sure the file is marked as executable:
@@ -17,7 +17,7 @@ If you're on linux, just make sure the file is marked as executable:
     chmod +x test-finder.py
 
 How to use
-==========
+----------
 
 The following arguments are available:
 
