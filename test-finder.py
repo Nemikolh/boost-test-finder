@@ -24,6 +24,7 @@ def makefile_body(sources, runner, compiler, flags = "", additional_libraries = 
               "\nLIBS = -lboost_unit_test_framework " + additional_libraries + "\n"
               "\nSOURCES = " + sources + "\n"
               "\nOBJECTS = $(subst .cpp,.o,$(SOURCES))\n"
+              "\nDFILES  = $(subst .cpp,.d,$(SOURCES))\n"
               "\nall: $(OBJECTS)\n"
               "\t" + compiler + " -o " + runner +" $(CXXFLAGS) $(OBJECTS) $(LIBS)\n"
               "\nrun:\n"
@@ -34,7 +35,7 @@ def makefile_body(sources, runner, compiler, flags = "", additional_libraries = 
               "sed 's,\\($*\\)\\.o[ :]*,\\1.o $@ : ,g' < $@.$$$$ > $@; \\\n"
               "rm -f $@.$$$$ \n"
               "\nclean:\n"
-              "\trm $(OBJECTS) *.d " + runner + "\n"
+              "\trm $(OBJECTS) $(DFILES) " + runner + "\n"
               "")
     return result
 
